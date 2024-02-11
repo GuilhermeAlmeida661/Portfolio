@@ -1,0 +1,448 @@
+#include <GL/glut.h>
+#include <math.h>
+#include <stdio.h>
+
+GLfloat totalRotacao = 0.0; // variáveis para animações e rotações de tudo para visualização
+GLfloat bracodirRotacao = 0.0; // variáveis para animações e rotações do braço
+GLfloat antebracodirRotacao = 0.0;// variáveis para animações e rotações do ante braço
+GLfloat maodirRotacao = 0.0; // variáveis para animações e rotações da mão
+GLfloat coxadirRotacao = 0.0; // variáveis para animações e rotações da coxa dir
+GLfloat joelhodirRotacao = 0.0; // variáveis para animações e rotações do joelho dir
+GLfloat tornozelodirRotacao = 0.0; // variáveis para animações e rotações do tornozelo dir
+GLfloat coxaesqRotacao = 0.0; // variáveis para animações e rotações da coxa
+GLfloat joelhoesqRotacao = 0.0; // variáveis para animações e rotações da canela
+GLfloat tornozeloesqRotacao = 0.0; // variáveis para animações e rotações do tornozelo
+GLfloat bonecoPosicao = 0.0; // variavel de movimento do boneco
+
+bool andarTras = false;//variavel para controlar a caminhada
+bool andarFrente = false;
+bool acenar = false; // variavel para controlar o aceno do boneco
+
+void desenheHumanoide() {
+    //Cabeça
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    glRotatef(totalRotacao, 0.0, 1.0, 0.0); // Rotação junto ao tronco no eixo y para visualização
+    glTranslatef(0.0, 1.8, 0.0);
+    glutWireCube(0.5);
+    glPopMatrix();
+
+    //Olhos somente para referência
+    glPushMatrix();
+    glColor3f(1.0, 1.0, 1.0);
+    glTranslatef(0.11, 1.9, 0.5);
+    glutWireSphere(0.1, 20, 20);
+    glPopMatrix();
+    glPushMatrix();
+    glTranslatef(-0.11, 1.9, 0.5);
+    glutWireSphere(0.1, 20, 20);
+    glPopMatrix();
+
+    //Pescoço
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    glTranslatef(0.0,1.5,0.0);
+    glutWireSphere(0.1,20,20);
+    glPopMatrix();
+
+    //Tronco
+    glPushMatrix();
+    glColor3f(0.0, 1.0, 1.0);
+    glRotatef(totalRotacao, 0.0, 1.0, 0.0); // Rotação no eixo y para visualização
+    glTranslatef(0.0, 0.8, 0.0);
+    glScalef(0.8, 1.2, 0.5);
+    glutWireCube(1.0);
+
+    //Ombro esquerdo
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    glTranslatef(-0.6, 0.45, 0.3);
+    glutWireSphere(0.1, 20, 20);
+
+    //Braço esquerdo
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    glTranslatef(0.0, -0.25, 0.0);
+    glScalef(0.4, 0.3, 0.4);
+    glutWireCube(1.0);
+
+    //Cotovelo esquerdo
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    glTranslatef(0.0, -0.7, 0.0);
+    //glRotatef(-antebracoRotacao, 0.0, 0.0, 1.0); // Rotação do cotovelo esquerdo, eixo z
+    glutWireSphere(0.25, 20, 20);
+
+    //Antebraço esquerdo
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    glTranslatef(0.0, -0.7, 0.0);
+    glScalef(1.0, 1.0, 0.4);
+    glutWireCube(1.0);
+
+    //Punho esquerdo
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    glTranslatef(0.0, -0.7, 0.0);
+    glutWireSphere(0.25, 20, 20);
+
+    //Mão esquerda --> quadrado, cor amarela
+    glPushMatrix();
+    glColor3f(1.0, 1.0, 0.0);
+    glTranslatef(0.0, -0.6, 0.0);
+    glutWireCube(0.8);
+    glPopMatrix();
+
+    //Ombro direito
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    glTranslatef(0.6, 0.45, 0.3);
+    glRotatef(-bracodirRotacao, 0.0, 0.0, 1.0); // Rotação do braço esquerdo, eixo z
+    glutWireSphere(0.1, 20, 20);
+
+    //Braço direito
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    glTranslatef(0.0, -0.25, 0.0);
+    glScalef(0.4, 0.3, 0.4);
+    glutWireCube(1.0);
+
+    //Cotovelo direito
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    glTranslatef(0.0, -0.7, 0.0);
+    glRotatef(-antebracodirRotacao, 0.0, 0.0, 1.0); // Rotação do braço esquerdo, eixo z
+    glutWireSphere(0.25, 20, 20);
+
+    //Antebraço direito
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    glTranslatef(0.0, -0.7, 0.0);
+    glScalef(1.0, 1.0, 0.4);
+    glutWireCube(1.0);
+
+    //Punho direito
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    glTranslatef(0.0, -0.7, 0.0);
+    glRotatef(-maodirRotacao, 0.0, 0.0, 1.0); // Rotação do braço esquerdo, eixo z
+    glutWireSphere(0.25, 20, 20);
+
+    //Mão direita
+    glPushMatrix();
+    glColor3f(1.0, 1.0, 0.0);
+    glTranslatef(0.0, -0.6, 0.0);
+    glutWireCube(0.8);
+    glPopMatrix();
+
+    //Coxa esquerda
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    glTranslatef(-0.3, -0.9, 0.0);
+    glRotatef(coxaesqRotacao, 1.0, 0.0, 0.0); // Rotação da perna esquerda, eixo x, limite de angulo 90 e -90 --> animação
+    glScalef(0.4, 0.8, 0.4);
+    glutWireCube(1.0);
+
+    //Joelho esquerdo
+    glPushMatrix();
+    glColor3f(0.0, 1.0, 0.0);
+    glTranslatef(0.0, -0.7, 0.0);
+    glRotatef(joelhoesqRotacao, 1.0, 0.0, 0.0); // Rotação do joelho esquerdo, eixo x
+    glutWireSphere(0.3, 20, 20);
+
+    //Canela esquerda
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0); // Cor azul para a perna
+    glTranslatef(0.0, -0.6, 0.0); // Posicionamento da perna em relação à coxa
+    glScalef(0.9, 1.0, 1.0); // Escala da canela
+    glutWireCube(1.0);
+
+    //Tornozelo esquerdo
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    glTranslatef(0.0, -0.7, 0.0);
+    glRotatef(tornozeloesqRotacao, 1.0, 0.0, 0.0); // Rotação do tonozelo esquerdo, eixo x
+    glutWireSphere(0.3, 20, 20);
+
+    //Pé esquerdo
+    glPushMatrix();
+    glColor3f(0.0, 1.0, 0.0);
+    glTranslatef(0.0, -0.4, 0.4);
+    glScalef(0.9, 0.25, -2.0);
+    glutWireCube(1.0);
+    glPopMatrix();
+
+    //Coxa direita
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    glTranslatef(0.3, -0.9, 0.0);
+    glRotatef(-coxadirRotacao, 1.0, 0.0, 0.0); // Rotação da perna direita, eixo x, limite de angulo 90 e -90 --> animação
+    glScalef(0.4, 0.8, 0.4);
+    glutWireCube(1.0);
+
+    //Joelho direito
+    glPushMatrix();
+    glColor3f(0.0, 1.0, 0.0);
+    glTranslatef(0.0, -0.7, 0.0);
+    glRotatef(-joelhodirRotacao, 1.0, 0.0, 0.0); // Rotação do joelho direito, eixo x
+    glutWireSphere(0.3, 20, 20);
+
+    //Canela direita
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0); // Cor azul para a perna
+    glTranslatef(0.0, -0.6, 0.0); // Posicionamento da perna em relação à coxa
+    glScalef(0.9, 1.0, 1.0); // Escala da canela, lembrando que a hierarquia modifica as matrizes envolvidas na pilha do push matrix
+    glutWireCube(1.0);
+
+    //Tornozelo direito
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    glTranslatef(0.0, -0.7, 0.0);
+    glRotatef(-tornozelodirRotacao, 1.0, 0.0, 0.0); // Rotação do joelho direito, eixo x
+    glutWireSphere(0.3, 20, 20);
+
+    //Pé direito
+    glPushMatrix();
+    glColor3f(0.0, 1.0, 0.0);
+    glTranslatef(0.0, -0.4, 0.4);
+    glScalef(0.9, 0.25, -2.0);
+    glutWireCube(1.0);
+    glPopMatrix();
+
+    glPopMatrix(); // voltando para a matriz inicial
+}
+
+void animacaoAndarFrente(){
+    float limite = -10.0;
+    float i;
+    float attPosicao = 0.15;
+    float velocidade = 0.2;
+    float tamanhoPeh = 0.4;
+    float maxPosicao = 25;
+
+    if(andarFrente){
+        for(i = 0.0; i > limite; i--){
+            coxadirRotacao = -60.0 * sin(i * 1.0);
+            joelhodirRotacao = 30.0 * sin(i * 2.0);
+            tornozelodirRotacao = 45.0 * sin(i * 1.0);
+            coxaesqRotacao = -60.0 * sin(i * 1.0);
+            joelhoesqRotacao = 30.0 * sin(i * 2.0);
+            tornozeloesqRotacao = 45.0 * sin(i * 1.0);
+            bonecoPosicao += attPosicao + tamanhoPeh * velocidade;
+        }
+    }else{
+            coxadirRotacao = 0.0;
+            joelhodirRotacao = 0.0;
+            tornozelodirRotacao = 0.0;
+            }
+    if(bonecoPosicao >= maxPosicao){
+        andarFrente = false;
+      }
+}
+
+void animacaoAndarTras(){
+    float limite = 10.0;
+    float i;
+    float attPosicao = 0.3;
+    float velocidade = 0.2;
+    float tamanhoPeh = 0.4;
+    float maxPosicao = -25;
+
+    if(andarTras){
+        for(i = 0.0; i < limite; ++i){
+            coxadirRotacao = -60.0 * sin(i * 1.0);
+            joelhodirRotacao = 30.0 * sin(i * 2.0);
+            tornozelodirRotacao = 45.0 * sin(i * 1.0);
+            coxaesqRotacao = 60.0 * sin(i * 1.0);
+            joelhoesqRotacao = -30.0 * sin(i * 2.0);
+            tornozeloesqRotacao = -45.0 * sin(i * 1.0);
+            bonecoPosicao -= tamanhoPeh * velocidade + attPosicao;
+        }
+    }else{
+            coxadirRotacao = 0.0;
+            joelhodirRotacao = 0.0;
+            tornozelodirRotacao = 0.0;
+            coxaesqRotacao = 0.0;
+            joelhoesqRotacao = 0.0;
+            tornozeloesqRotacao = 0.0;
+            }
+    if(bonecoPosicao <= maxPosicao){
+        andarTras = false;
+      }
+
+}
+
+void animacaoAcenar(){
+    float tempoAnimacao = 0.0;
+
+    if(acenar){
+        while(tempoAnimacao < 100.0){
+                tempoAnimacao += 10.0;
+                maodirRotacao = 45.0 * sin(tempoAnimacao * 2.0);
+        }
+    }else{
+        maodirRotacao = 0.0;
+    }
+}
+
+void atualizarAnimacoes(){
+    animacaoAndarTras();
+    animacaoAndarFrente();
+    animacaoAcenar();
+}
+
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glMatrixMode(GL_PROJECTION); // matriz de projeção ---> fazer a conta
+    glLoadIdentity(); // Matriz identidade para não correr o risco de buscar outra matriz na inicialização da projetiva
+    gluPerspective(60.0, 1.0, 1.0, 100.0); // matriz de projeção --> cálculo de projetiva
+    glMatrixMode(GL_MODELVIEW); // lembrando que Model view = LAt * Mat obj
+    glLoadIdentity();
+    gluLookAt(0.0, 2.0, 5.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0); //LookAt --> Matriz da câmera
+    atualizarAnimacoes();
+    glTranslatef(0.0, 0.0, bonecoPosicao); // verificar andar para frente
+    desenheHumanoide();
+    glutSwapBuffers();
+}
+
+//Cases para a animação do boneco via teclado aplicando rotações simples
+void menuFunc(int opcao) {
+    // menores valores...é uma animação mais suave e melhor para cálculos
+    // if simples para limitar a movimentação
+    switch (opcao) {
+        case 1:
+            bracodirRotacao -= 45.0;
+            if(bracodirRotacao < -90) bracodirRotacao = -90;
+            andarFrente = false;
+            andarTras = false;
+            antebracodirRotacao -= 45.0;
+            if(antebracodirRotacao < -90) antebracodirRotacao = -90;
+            andarFrente = false;
+            andarTras = false;
+            acenar = !acenar;
+            break;
+        case 2:
+            totalRotacao += 30.0; // rotação tronco
+            acenar = false;
+            andarFrente = false;
+            andarTras = false;
+            break;
+        case 3:
+            andarFrente = !andarFrente;
+            andarTras = false;
+            break;
+        case 4:
+            andarTras = !andarTras;
+            andarFrente = false;
+            break;
+        case 5:
+            bracodirRotacao = 0.0;
+            antebracodirRotacao = 0.0;
+            maodirRotacao = 0.0;
+            coxadirRotacao = 0.0;
+            joelhodirRotacao = 0.0;
+            tornozelodirRotacao = 0.0;
+            coxaesqRotacao = 0.0;
+            joelhoesqRotacao = 0.0;
+            tornozeloesqRotacao = 0.0;
+            totalRotacao = 0.0;
+            bonecoPosicao = 0.0;
+            acenar = false;
+            andarFrente = false;
+            andarTras = false;
+            break;
+        case 0:
+            exit(0);
+            break;
+    }
+    glutPostRedisplay(); // atualização das animações e hierarquia de transformações
+}
+
+void keyboardFunc(unsigned char key, int x, int y) {
+    // menores valores...é uma animação mais suave e melhor para cálculos
+    // if simples para limitar a movimentação
+    switch (key) {
+        case 'w':
+        case 'W':
+            bracodirRotacao -= 5.0;
+            if(bracodirRotacao < -90) bracodirRotacao = -90;
+            andarFrente = false;
+            andarTras = false;
+            break;
+        case 's':
+        case 'S':
+           antebracodirRotacao -= 5.0;
+           if(antebracodirRotacao < -90) antebracodirRotacao = -90;
+            andarFrente = false;
+            andarTras = false;
+            break;
+        case 'a':
+        case 'A':
+            acenar = !acenar;
+            break;
+        case 'y':
+        case 'Y':
+            totalRotacao += 5.0; // rotação tronco
+            acenar = false;
+            andarFrente = false;
+            andarTras = false;
+            break;
+        case 'f':
+        case 'F':
+            andarFrente = !andarFrente;
+            andarTras = false;
+            break;
+        case 't':
+        case 'T':
+            andarTras = !andarTras;
+            andarFrente = false;
+            break;
+        case 'r':
+        case 'R':
+            bracodirRotacao = 0.0;
+            antebracodirRotacao = 0.0;
+            maodirRotacao = 0.0;
+            coxadirRotacao = 0.0;
+            joelhodirRotacao = 0.0;
+            tornozelodirRotacao = 0.0;
+            coxaesqRotacao = 0.0;
+            joelhoesqRotacao = 0.0;
+            tornozeloesqRotacao = 0.0;
+            totalRotacao = 0.0;
+            bonecoPosicao = 0.0;
+            acenar = false;
+            andarFrente = false;
+            andarTras = false;
+            break;
+    }
+    glutPostRedisplay();
+}
+
+
+void createMenu() {
+    int menu = glutCreateMenu(menuFunc);
+    glutAddMenuEntry("Andar para Frente, Atalho: F", 3);
+    glutAddMenuEntry("Andar para Trás, Atalho: T", 4);
+    glutAddMenuEntry("Acenar mão Direita, Atalhos braço: W, antebraço: S, mão: A", 1);
+    glutAddMenuEntry("Girar no proprio eixo, Atalho: Y", 2);
+    glutAddMenuEntry("Resetar, Atalho: R", 5);
+    glutAddMenuEntry("Sair", 0);
+    glutAttachMenu(GLUT_RIGHT_BUTTON); // Botão direito do mouse
+}
+
+void init() {
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+    glEnable(GL_DEPTH_TEST); // teste de profundidade da própria biblioteca
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+    glutInitWindowSize(800, 600); //viewport default
+    glutCreateWindow("Robô Humanoide - Frank - com animações");
+    createMenu();
+    glutKeyboardFunc(keyboardFunc);
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}
