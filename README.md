@@ -27,4 +27,4 @@ Public static void main(String[] args){
 - [Documentação Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [Documentação HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 - [Documentação Git](https://www.git-scm.com/doc)
-- [Documentação GitHub](https://docs.github.com/
+- [Documentação GitHub](https://docs.github.com/)
