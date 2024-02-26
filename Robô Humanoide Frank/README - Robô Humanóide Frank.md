@@ -2,7 +2,7 @@
 # Robô Articulado e Animado (Frank 🤖)
 
 ##  Tecnologias utilizadas para a construção 🔨
-- IDE CodeBlocks (versão 20.3)
+- IDE CodeBlocks (versão 20.03)
 - Linguagem C 
 - Biblioteca de OpenGL (versão 3.0)
 
