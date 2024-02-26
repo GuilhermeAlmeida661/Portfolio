@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Sistema Gerenciador de Passagem de Plantão</title>
+            </f:facet>
+            <h:outputStylesheet name="default.css" library="css" />
+            <h:outputStylesheet name="overrides.css" library="css" />
+        </h:head>
+
+        <h:body>
+            <div style="margin: 0 auto;">
+                <h:form id="form">
+            <p:layout fullPage="true" style="text-align:left; min-width:1020px;
+                max-width:1020px; min-height:600px">
+
+            <p:layoutUnit position="north" size="50" style="text-align:center;">
+                <h1>Sistema de Gerenciamento de Passagem de Plantão</h1>
+            </p:layoutUnit>
+                        
+            <p:layoutUnit position="south" size="50" style="text-align:center;">
+                <br/><strong>SGPP APP</strong>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="west" size="186">
+                <p:menu>
+                    <p:menuitem value="Página Inicial" url="/index.jsf"></p:menuitem>
+                </p:menu>
+                <p:menu>
+                    <p:submenu label="Pacientes e Servidores">
+                        <p:menuitem value="Cadastrar Pacientes" url="/cadastrarPacientes.jsf"/>
+                        <p:menuitem value="Cadastrar Servidores" url="/cadastrarServidores.jsf"/>
+                    </p:submenu>
+                    <p:submenu label="Alas e Plantões">
+                        <p:menuitem value="Cadastrar Alas" url="/cadastrarAlas.jsf"/>
+                        <p:menuitem value="Cadastrar Plantões" url="/cadastrarPlantão.jsf"/>
+                    </p:submenu>
+                    </p:menu>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center" style="padding: 10px;">
+                <ui:insert name="conteudo"></ui:insert>
+            </p:layoutUnit>
+
+            </p:layout>
+            </h:form>
+            </div>
+            
+        </h:body>
+
+    </f:view>
+</html>
+

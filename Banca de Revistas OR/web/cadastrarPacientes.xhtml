@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html>
+    <ui:composition 
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      template="/template.xhtml">
+    <ui:define name="conteudo">
+        <h2>Cadastrar Pacientes</h2>
+        <p:panel header = "Pacientes Cadastrados">
+          <p:outputPanel id = "paciente">
+                <p:dataTable id = "dataTable" var="paciente"
+                           filteredValue="#{pacienteBean.pacientesFiltrados}"
+                           value="#{pacienteBean.all}" 
+                           widgetVar="tabelaPacientes" 
+                           emptyMessage="Nenhum registro encontrado">
+                <p:column headerText="Nome" filterBy="nome"
+                    footerText="Começa Com">
+                    <h:outputText value="#{paciente.nome}"/>
+                </p:column>
+                <p:column headerText="Idade" filterBy="idade">
+                    <h:outputText value="#{paciente.idade}"/>
+                </p:column>
+                 <p:column headerText="Sexo" filterBy="sexo"
+                           footerText="exact" filterOptions="#{pacienteBean.getSexo(true)}"
+                           filterMatchMode ="exact">
+                    <h:outputText value="#{paciente.sexo}"/>
+                </p:column>
+                 <p:column headerText="Estado Civil" filterBy="estadoCivil"
+                           footerText="exact" filterOptions="#{pacienteBean.getEstadosCivis(true)}"
+                           filterMatchMode ="exact">
+                    <h:outputText value="#{paciente.estadoCivil}"/>
+                </p:column>
+                <p:column headerText="ALA" filterBy="ala"
+                          footerText="exact" filterOptions="#{alaBean.getEspecialidade(true)}"
+                           filterMatchMode ="exact">
+                    <h:outputText value="#{paciente.ala}"/>
+                </p:column>
+                <p:column headerText="Situação" filterBy="situação">
+                    <h:outputText value="#{paciente.situação}"/>
+                </p:column>
+                <p:column headerText="Avaliação" filterBy="avaliação">
+                    <h:outputText value="#{paciente.avaliação}"/>
+                </p:column>
+                <p:column headerText="Ação">
+                        <p:commandButton value="Consultar" action="#{pacienteBean.consultar(paciente)}" oncomplete="panelPaciente.show();" update=":form:displayPaciente"/>   
+                </p:column>
+                </p:dataTable>
+                <p:panel>
+                    <p:commandButton value="Cadastrar" 
+                                   actionListener="#{pacienteBean.inserir()}" 
+                                   oncomplete="panelPaciente.show();" 
+                                   update=":form:displayPaciente"/>
+                </p:panel>
+                </p:outputPanel>
+        </p:panel>
+        <p:panel header="Dados do Paciente" id="dadosPaciente" 
+                 widgetVar="panelPaciente" visible="false" closable="true" 
+                 style="margin-top:10px;">
+            <p:messages id="erroBanca"/>
+            <h:panelGrid id="displayPaciente" columns="1" styleClass="grid">
+                <p:panel>
+                    <p:wizard
+                        flowListener="#{pacienteBean.onFlowProcess}"
+                        backLabel="Anterior"
+                        nextLabel="Proximo">
+                        <p:tab id="dadosPessoais" title="1.Dados Pessoais">
+                            <p:panel header="Dados Pessoais">        
+                        <h:panelGrid columns="2" columnClasses="label,value" styleClass="grid">
+                            <h:outputText value="Nome: *"/>
+                            <p:inputText id="nomeInputText" required="false" label="nome" 
+                                        value="#{pacienteBean.value.nome}" styleClass="ipt-large"/>
+                            <p:message for="nomeInputText"/>
+                            <br/>
+                            <h:outputText value="Idade: *"/>
+                            <p:inputText id="idadeInputText" required="false" label="idade" 
+                                        value="#{pacienteBean.value.idade}" styleClass="ipt-large"/>
+                            <p:message for="idadeInputText"/>
+                            <br/>
+                            <h:outputText value="Sexo: *"/>
+                            <p:selectOneRadio id="sexoSelectOneRadio" value="#{pacienteBean.value.sexo}"
+                                              required="false" label="Sexo">
+                                <f:selectItems value="#{pacienteBean.getSexo(false)}"/>
+                            </p:selectOneRadio>
+                            
+                            <h:outputText value="Estado Civil: "/>
+                            <p:selectOneMenu id="estadoCivilSelectOneMenu" value="#{pacienteBean.value.estadoCivil}"
+                                              required="false" label="Estado Civil" style="width:100px">
+                                <f:selectItems value="#{pacienteBean.getEstadosCivis(false)}"/>
+                            </p:selectOneMenu>
+                            <h:outputText value="Data Nasc: "/>
+                            <p:inputMask id="dataNascimentoInputMask" required="false" label="Data de Nascimento"
+                                         mask="99/99/9999" value="#{pacienteBean.value.dataNascimento}">
+                                <f:convertDateTime pattern="DD/mm/yyyy" locale="pt_BR"/>
+                            </p:inputMask>
+                            
+                            <h:outputText value="Cidade: *"/>
+                            <p:inputText id="cidadeInputText" required="false" label="cidade" 
+                                        value="#{pacienteBean.value.cidade}" styleClass="ipt-large"/>
+                            <p:message for="cidadeInputText"/>
+                            <br/>
+                        </h:panelGrid>
+                            </p:panel>
+                        </p:tab>
+                        <p:tab id="contatos" title="2.Contatos">
+                            <p:panel header="Contatos">        
+                        <h:panelGrid columns="3" columnClasses="label,value" styleClass="grid">
+                            <h:outputText value="Email: "/>
+                            <p:inputText id="emailInputText" required="false" label="email" validatorMessage="Formato de email inválido"
+                                        value="#{pacienteBean.value.email}" styleClass="ipt-large"/>
+                            <p:message for="emailInputText"/>
+                            <h:outputText value="Whatsapp: "/>
+                            <p:inputText id="whatsappInputText" required="false" label="whatsapp" validatorMessage="Formato de telefone inválido"
+                                        value="#{pacienteBean.value.whatsapp}" styleClass="ipt-large"/>
+                            <p:message for="whatsappInputText"/>
+                        </h:panelGrid>
+                            </p:panel>
+                        </p:tab>
+                        <p:tab id="situação" title="3.Situação">
+                            <p:panel header="Situação do Paciente:">
+                                <p:inputTextarea rows="6" cols="33" required="true" label="situação" value="#{pacienteBean.value.situação}" styleClass="ipt-large" />
+                                <br></br>
+                                <h:outputText value="Avaliação: "/>
+                                <p:inputText id="avaliaçãoInputText" required="true" label="avaliação" 
+                                        value="#{pacienteBean.value.avaliação}" styleClass="ipt-large"/>
+                                <p:message for="avaliaçãoInputText"/>
+                                <h:outputText value="Observação: "/>
+                                <p:inputText id="observaçãoInputText" required="false" label="observação" 
+                                        value="#{pacienteBean.value.observação}" styleClass="ipt-large"/>
+                                <p:message for="observaçãoInputText"/>
+                                <h:outputText value="Ala onde está: "/>
+                                <p:inputText id="alaInputText" required="false" label="ala" 
+                                             value="#{pacienteBean.value.ala}" styleClass="ipt-large"/>
+                                <p:message for="alaInputText"/>
+                            </p:panel>
+                        </p:tab>
+                    </p:wizard>
+                </p:panel>
+                <h:panelGroup rendered="#{!pacienteBean.consultar}">
+                    <p:commandButton value="Inserir" action="#{pacienteBean.save()}" ajax="false" icon="ui-icon-circle-plus" update=":form:displayPaciente"/>
+                </h:panelGroup>
+                <h:panelGroup rendered="#{pacienteBean.consultar}">
+                    <p:commandButton value="Alterar" action="#{pacienteBean.update()}" ajax="false" icon="ui-icon-pencil"/>
+                    <p:commandButton value="Remover" action="#{pacienteBean.delete()}" ajax="false" icon="ui-icon-circle-minus" update=":form:displayPaciente"/>
+                </h:panelGroup>
+            </h:panelGrid>
+        </p:panel>
+    </ui:define>
+</ui:composition>
+                        
+              
+    <head>
+    </head>
+    <body>
+    </body>
+</html>
