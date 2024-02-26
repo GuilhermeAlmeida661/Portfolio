@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html>
+    <ui:composition 
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      template="/template.xhtml">
+    <ui:define name="conteudo">
+        <h2>Cadastrar Alas</h2>
+        <p:panel header = "Alas Cadastradas">
+          <p:outputPanel id = "ala">
+                <p:dataTable id = "dataTable" var="ala"
+                             filteredValue="#{alaBean.alasFiltradas}"
+                           value="#{alaBean.all}" 
+                           widgetVar="tabelaAla" 
+                           emptyMessage="Nenhum registro encontrado">
+                <p:column headerText="Especialidade">
+                    <h:outputText value="#{ala.especialidade}"/>
+                </p:column>
+                <p:column headerText="Código da Ala">
+                    <h:outputText value="#{ala.código_Ala}"/>
+                </p:column>
+                <p:column headerText="Está lotada?">
+                    <h:outputText value="#{ala.estáLotada}"/>
+                </p:column>
+                <p:column headerText="Ação">
+                        <p:commandButton value="Consultar" action="#{alaBean.consultar(ala)}" oncomplete="panelAla.show();" update=":form:displayAla"/>   
+                </p:column>
+                </p:dataTable>
+                <p:panel>
+                    <p:commandButton value="Cadastrar" 
+                                   actionListener="#{alaBean.inserir()}" 
+                                   oncomplete="panelAla.show();" 
+                                   update=":form:displayAla"/>
+                </p:panel>
+                </p:outputPanel>
+        </p:panel>
+        <p:panel header="Dados da Ala médica" id="dadosAla" 
+                 widgetVar="panelAla" visible="false" closable="true" 
+                 style="margin-top:10px;">
+            <p:messages id="erroBanca"/>
+            <h:panelGrid id="displayAla" columns="1" styleClass="grid">
+                <p:panel>
+                        <h:panelGrid columns="3" columnClasses="label, value" styleClass="grid">
+                            <h:outputText value="Especialidade: *"/>
+                            <p:selectOneMenu id="especialidadeSelectOneMenu" value="#{alaBean.value.especialidade}"
+                                              required="false" label="Especialidade" style="width:100px">
+                                <f:selectItems value="#{alaBean.getEspecialidade(false)}"/>
+                            </p:selectOneMenu>
+                            <br></br>
+                            <h:outputText value="Código da Ala: *"/>
+                            <p:inputText id="código_alaInputText" required="false" label="código_ala" 
+                                         value="#{alaBean.value.código_Ala}" styleClass="ipt-large"/>
+                            <p:message for="código_alaInputText"/>
+                            <h:outputText value="Está Lotada? : *"/>
+                            <p:selectBooleanCheckbox id="estáLotadaSelectBooleanCheckbox" 
+                                                     value="#{alaBean.value.estáLotada}"/>
+                            <p:message for="estáLotadaSelectBooleanCheckbox"/>
+                        </h:panelGrid>
+                </p:panel>
+                <h:panelGroup rendered="#{!alaBean.consultar}">
+                    <p:commandButton value="Inserir" action="#{alaBean.save()}" ajax="false" icon="ui-icon-circle-plus" update=":form:displayAla"/>
+                </h:panelGroup>
+                <h:panelGroup rendered="#{alaBean.consultar}">
+                    <p:commandButton value="Alterar" action="#{alaBean.update()}" ajax="false" icon="ui-icon-pencil"/>
+                    <p:commandButton value="Remover" action="#{alaBean.delete()}" ajax="false" icon="ui-icon-circle-minus" update=":form:displayAla"/>
+                </h:panelGroup>
+            </h:panelGrid>
+        </p:panel>
+    </ui:define>
+</ui:composition>
+                        
+              
+    <head>
+    </head>
+    <body>
+    </body>
+</html>
