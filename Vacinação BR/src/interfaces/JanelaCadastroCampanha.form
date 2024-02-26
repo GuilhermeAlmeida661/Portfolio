@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="title" type="java.lang.String" value="Janela cadastro campanha"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="campanhaCadastradaLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="ListasScrollPane" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                              <Component id="idade_maxLabel" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="idade_minLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="sequencialLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="idade_maxTextField" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="idade_minTextField" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="sequencialTextField" min="-2" pref="38" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="dia_inicialLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="dia_finalLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="cidadeLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="cidadeComboBox" min="-2" max="-2" attributes="0"/>
+                          <Component id="dia_inicialTextField" pref="63" max="32767" attributes="0"/>
+                          <Component id="dia_finalTextField" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="campanhaLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="profissionalLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="profissionalTextField" min="-2" pref="86" max="-2" attributes="0"/>
+                          <Component id="campanhaTextField" min="-2" pref="86" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <Component id="InserirCampanhaButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Component id="ConsultarCampanhaButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="AlterarCampanhaButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="RemoverCampanhaButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="LimparCampanhaButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="17" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="especialização_campanhasTabbedPane" pref="0" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="campanhaCadastradaLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="ListasScrollPane" min="-2" pref="132" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="sequencialTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="sequencialLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="idade_minTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="idade_minLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="idade_maxTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="idade_maxLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cidadeComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cidadeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="dia_inicialTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="dia_inicialLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="profissionalTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="profissionalLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="campanhaTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="campanhaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="dia_finalTextField" alignment="3" max="32767" attributes="0"/>
+                          <Component id="dia_finalLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="especialização_campanhasTabbedPane" pref="88" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="InserirCampanhaButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ConsultarCampanhaButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="AlterarCampanhaButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="RemoverCampanhaButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="LimparCampanhaButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JTextField" name="sequencialTextField">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="sequencialLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sequencial:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="idade_minLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Idade min :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="idade_minTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="idade_maxLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Idade max:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="idade_maxTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="cidadeLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cidade:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cidadeComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new DefaultComboBoxModel(Cidade.values())" type="code"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="profissionalLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Profissional:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="profissionalTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="dia_inicialLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dia inicial:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="dia_finalLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dia final:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="dia_inicialTextField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="dia_finalTextField">
+    </Component>
+    <Component class="javax.swing.JButton" name="InserirCampanhaButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Inserir"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inserirCampanha"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="ConsultarCampanhaButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Consultar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultarCampanha"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="AlterarCampanhaButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Alterar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="alterarCampanha"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="RemoverCampanhaButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Remover"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removerCampanha"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="LimparCampanhaButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Limpar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="limparCampanha"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="campanhaLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Campanha:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="campanhaTextField">
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="ListasScrollPane">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JList" name="campanhas_CadastradasList">
+          <Properties>
+            <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new DefaultListModel()" type="code"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="campanhaCadastradaLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Campanhas cadastradas:"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JTabbedPane" name="especializa&#xe7;&#xe3;o_campanhasTabbedPane">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[600, 200]"/>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+    </Container>
+  </SubComponents>
+</Form>
