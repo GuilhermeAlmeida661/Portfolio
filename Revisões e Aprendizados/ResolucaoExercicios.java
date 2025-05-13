@@ -4,12 +4,11 @@ import java.util.Scanner;
 
 public class ResolucaoExercicios{
     public static void main(String[] args) throws Exception {
-        //para o usuário digitar os dados para a resolução dos exercicios -> Scanner//
+        //Para o usuário digitar os dados para a resolução dos exercicios -> Scanner//
         Scanner scanner = new Scanner(System.in);
-        boolean knightIsAwake = true;
 
-        //aqui temos as chamadas dos métodos para serem testados e ver se estão corretas as soluções
-        //para verificar basta "descomentar" os métodos
+        //Aqui temos as chamadas dos métodos para serem testados e ver se estão corretas as soluções
+        //Para verificar basta "descomentar" os métodos
         System.out.println("Exercicio 1:");
         System.out.println("Verifique se o numero digitado ele é Par ou Ímpar.\n");
         //verificaParOuImpar(scanner);
@@ -32,7 +31,6 @@ public class ResolucaoExercicios{
         System.out.println("Crie um vetor com 5 números. Desloque os elementos para a direita, de forma que o último vire o primeiro.\n");
         avançaElementos();
         //fechar a leitura de dados do teclado, boa prática de programação
-        //canFastAttack(knightIsAwake);
         scanner.close();
         
     }
@@ -94,22 +92,6 @@ public class ResolucaoExercicios{
                     System.out.println(+ primo);
                 }
                 primo++;
-            }
-        }
-
-        //Teste de resposta do exercism Annalyn's Infiltration
-        private static boolean canFastAttack(boolean knightIsAwake){
-            System.out.println("Can Annalyn perform a fast attack?");
-            if(knightIsAwake){
-                System.out.println("False\n");
-                return false;
-            }
-            if(!knightIsAwake){
-                System.out.println("True\n");
-                return true;
-            }
-            else{
-                return true;
             }
         }
 
