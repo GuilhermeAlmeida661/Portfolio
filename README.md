@@ -1,7 +1,7 @@
 
 # Seja Bem vindo ao Meu Portfólio! 👨‍💻👩‍💻
 
-Nesse repositório, você encontrará meus projetos, contribuições e alguns pensamentos sobre o meu eu Profissional e Acadêmico. Sinta à vontade para explorar, analisar e perguntar qualquer coisa!
+Nesse repositório, você encontrará meus projetos, contribuições e alguns pensamentos sobre o meu eu Profissional e Acadêmico. Sinta-se à vontade para explorar, analisar e perguntar qualquer coisa!
 
 ```java
 Public static void main(String[] args){
