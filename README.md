@@ -1,13 +1,13 @@
 
 # 😎 Bem vindo ao Meu Portfólio
 
-Nesse repositório você encontrará meus projetos, contribuições e alguns pensamentos sobre o meu eu Profissional e Acadêmico de certa forma...sinta se bem vindo...e livre para analisar e perguntar qualquer coisa...
+Nesse repositório você encontrará meus projetos, contribuições e alguns pensamentos sobre o meu eu Profissional e Acadêmico de certa forma, sinta se bem vindo e livre para analisar e perguntar qualquer coisa...
 
 
 # Linguagens que você encontrará nesse Portfólio
 - Java
 - C 
-- Javascript 
+- Javascript(em breve) 
 
 ## E ainda...
 - Pontos sobre HTML
