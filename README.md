@@ -1,21 +1,27 @@
 
 # 😎 Bem vindo ao Meu Portfólio
 
-Nesse repositório você encontrará meus projetos, contribuições e alguns pensamentos sobre o meu eu Profissional e Acadêmico de certa forma, sinta se bem vindo e livre para analisar e perguntar qualquer coisa...
+Nesse repositório, você encontrará meus projetos, contribuições e alguns pensamentos sobre o meu eu Profissional e Acadêmico. Sinta à vontade para explorar, analisar e perguntar qualquer coisa!
 
+---
 
 # Linguagens que você encontrará nesse Portfólio
 - Java
 - C 
-- Javascript(em breve) 
+- Javascript(em breve)
+- HTML(noções básicas)
+- CSS(noções básicas)
+- PrimeFaces(noções básicas)
 
-## E ainda...
-- Pontos sobre HTML
-- Pontos sobre CSS 
+---
+
+## Conteúdos extras
 - Artigos e Insights
 - Minhas experiências e Trabalhos
 
-```
+---
+
+```java
 Public static void main(String[] args){
     System.out.println("Sejam bem vindos!\n");
 }
@@ -29,3 +35,5 @@ Public static void main(String[] args){
 - [Documentação Git](https://www.git-scm.com/doc)
 - [Documentação GitHub](https://docs.github.com/)
 
+
+Obrigado Pela Visita!
