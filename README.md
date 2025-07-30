@@ -3,6 +3,12 @@
 
 Nesse repositório, você encontrará meus projetos, contribuições e alguns pensamentos sobre o meu eu Profissional e Acadêmico. Sinta à vontade para explorar, analisar e perguntar qualquer coisa!
 
+```java
+Public static void main(String[] args){
+    System.out.println("Sejam bem vindos!\n");
+}
+```
+
 ---
 
 # Linguagens que você encontrará nesse Portfólio ✍️
@@ -20,12 +26,6 @@ Nesse repositório, você encontrará meus projetos, contribuições e alguns pe
 - Minhas experiências e Trabalhos
 
 ---
-
-```java
-Public static void main(String[] args){
-    System.out.println("Sejam bem vindos!\n");
-}
-```
 
 ## 🔎Referências 
 - [Dcoumentação C da Microsoft](https://learn.microsoft.com/pt-br/cpp/c-language/?view=msvc-170)
