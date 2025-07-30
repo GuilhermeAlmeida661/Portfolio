@@ -47,4 +47,4 @@ Public static void main(String[] args){
 - [Documentação GitHub](https://docs.github.com/)
 
 
-##Obrigado Pela Visita!
+## Obrigado Pela Visita! ✌️
