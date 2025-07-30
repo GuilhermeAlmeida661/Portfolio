@@ -5,7 +5,7 @@ Nesse repositório, você encontrará meus projetos, contribuições e alguns pe
 
 ---
 
-# Linguagens que você encontrará nesse Portfólio
+# Linguagens que você encontrará nesse Portfólio ✍️
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
@@ -15,7 +15,7 @@ Nesse repositório, você encontrará meus projetos, contribuições e alguns pe
 
 ---
 
-## Conteúdos extras
+## Conteúdos extras 🧠
 - Artigos e Insights
 - Minhas experiências e Trabalhos
 
