@@ -26,7 +26,7 @@ Public static void main(String[] args){
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
 ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
 
-# E Outros
+# E Outros 📋
 ![XML](https://img.shields.io/badge/XML-006B97?style=for-the-badge&logo=xml&logoColor=white)
 ![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=yellow)
 
