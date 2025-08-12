@@ -8,13 +8,13 @@ Nele estou usando Maven, Java 23, banco de dados de memória h2(Já que cada cat
 e a Biblioteca Java Swing para as interfaces(São telas simples mas nada mirabolante para que tenha uma aceitação maior entre os catequistas).
 
 ## Tela de Login do Fidelis
-![Tela de Login Fidelis]("Fidelis/fidelis/src/main/resources/images/Tela de Login Fidelis.png")
+![Tela de Login Fidelis]("https://github.com/GuilhermeAlmeida661/Portfolio/blob/main/Fidelis/fidelis/src/main/resources/images/Tela%20de%20Login%20Fidelis.png")
 
 ##Tela Principal do Fidelis
-![Tela Principal do Fidelis]("Fidelis/fidelis/src/main/resources/images/Fidelis Tela principal.png")
+![Tela Principal do Fidelis]("https://github.com/GuilhermeAlmeida661/Portfolio/blob/main/Fidelis/fidelis/src/main/resources/images/Fidelis%20Tela%20principal.png")
 
 ##Tela de Cadastro de Catequistas
-![Tela de Cadastro de Catequistas]("Fidelis/fidelis/src/main/resources/images/Tela de Cadastro de Catequistas.png")
+![Tela de Cadastro de Catequistas]("https://github.com/GuilhermeAlmeida661/Portfolio/blob/main/Fidelis/fidelis/src/main/resources/images/Tela%20de%20Cadastro%20de%20Catequistas.png")
 
 ##Tela de Cadastro de Catequizandos
-![Tela de Cadastro de Catequizandos]("Fidelis/fidelis/src/main/resources/images/Tela de Cadastro de Catequizandos.png")
+![Tela de Cadastro de Catequizandos]("https://github.com/GuilhermeAlmeida661/Portfolio/blob/main/Fidelis/fidelis/src/main/resources/images/Tela%20de%20Cadastro%20de%20Catequizandos.png")
