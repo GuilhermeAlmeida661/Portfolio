@@ -10,11 +10,11 @@ e a Biblioteca Java Swing para as interfaces(São telas simples mas nada mirabol
 ## Tela de Login do Fidelis
 ![Tela de Login Fidelis](https://github.com/GuilhermeAlmeida661/Portfolio/blob/main/Fidelis/fidelis/src/main/resources/images/Tela%20de%20Login%20Fidelis.png?raw=true)
 
-##Tela Principal do Fidelis
+## Tela Principal do Fidelis
 ![Tela Principal do Fidelis](https://github.com/GuilhermeAlmeida661/Portfolio/blob/main/Fidelis/fidelis/src/main/resources/images/Fidelis%20Tela%20principal.png?raw=true)
 
-##Tela de Cadastro de Catequistas
+## Tela de Cadastro de Catequistas
 ![Tela de Cadastro de Catequistas](https://github.com/GuilhermeAlmeida661/Portfolio/blob/main/Fidelis/fidelis/src/main/resources/images/Tela%20de%20Cadastro%20de%20Catequistas.png?raw=true)
 
-##Tela de Cadastro de Catequizandos
+## Tela de Cadastro de Catequizandos
 ![Tela de Cadastro de Catequizandos](https://github.com/GuilhermeAlmeida661/Portfolio/blob/main/Fidelis/fidelis/src/main/resources/images/Tela%20de%20Cadastro%20de%20Catequizandos.png?raw=true)
